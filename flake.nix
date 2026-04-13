@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
+    nixpkgs.url = "github:nixos/nixpkgs";
+    # nixpkgs.url = "github:nixos/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +41,6 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
               hugo
-              go
             ];
           };
         }
