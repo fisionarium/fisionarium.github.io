@@ -1,14 +1,9 @@
 <nav class="navbar navbar-expand-lg site-navigation sticky-top">
   <div class="container">
     <a class="navbar-brand" href="{{ site.BaseURL }}">
-       <h1>{{ site.Title }}</h1>
+      <h1>{{ site.Title }}</h1>
     </a>
-    <button
-      class="navbar-toggler collapsed"
-      type="button"
-      data-toggle="collapse"
-      data-target="#sitenavbar"
-    >
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sitenavbar">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -17,30 +12,41 @@
     <div class="collapse navbar-collapse" id="sitenavbar">
       <ul class="navbar-nav ml-auto main-nav">
         {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-        {{$menu := (site.Menus.nav)}} 
-        {{$len := (len $menu)}} 
-        {{ range $index, $element := $menu }} 
-          {{ if eq (add $index 1) $len }}
-          <li class="nav-item">
-            <a
-              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
-              href="{{ .URL | absURL }}"
-            >
-              <span class="btn-area">
-                <span data-text="{{ .Name }}">
-                  {{ .Name }}
-                </span>
+        {{$menu := (site.Menus.nav)}}
+        {{$len := (len $menu)}}
+        {{ range $index, $element := $menu }}
+        {{ if eq (add $index 1) $len }}
+        <li class="nav-item">
+          <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="{{ .URL | absURL }}">
+            <span class="btn-area">
+              <span data-text="{{ .Name }}">
+                {{ .Name }}
               </span>
-            </a>
-          </li>
-          {{ else }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | absURL }}"
-              >{{ .Name }}</a
-            >
-          </li>
-          {{ end }} 
+            </span>
+          </a>
+        </li>
+        {{ else }}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+        </li>
         {{ end }}
+        {{ end }}
+        <nav>
+          <ul>
+            {{ range .Site.Languages }}
+            {{ if eq . $.Site.Language }}
+            <li>{{ .LanguageName }}</span>
+              {{ end }}
+              {{ end }}
+              <ul class="dropdown__menu">
+                {{ range $.Translations }}
+                <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                </li>
+              </ul>
+              {{ end }}
+            </li>
+          </ul>
+        </nav>
       </ul>
     </div>
   </div>

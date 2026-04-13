@@ -1,0 +1,10 @@
+# Header
+services="Servicios"
+get_to_know_us="Conócenos"
+contact="Contacto"
+clinic="Clínica"
+language="Idioma"
+
+# Idiomas
+language_spanish="Español"
+language_catalan="Catalán"

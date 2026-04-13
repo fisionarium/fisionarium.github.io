@@ -23,3 +23,14 @@ title = "Fisionarium"
   name   = "Get in touch"
   url    = "contact"
   weight = 5
+
+
+######################### Languages ###################################
+defaultContentLanguage = 'ca'
+[languages]
+  [languages.ca]
+      label = 'Català'
+    weight = 1
+  [languages.es]
+    label = 'Español'
+    weight = 2
