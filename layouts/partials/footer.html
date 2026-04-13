@@ -1,4 +1,4 @@
-{{ with .Site.Data.footer }}
+{{ with hugo.Data.footer }}
 <footer class="footer pt-xxl-19 pt-8 pb-sm-7 pb-5" id="footer">
   <div class="container-fluid">
     <div class="footer-wrapper">
@@ -11,13 +11,6 @@
             <p>
               © Copyright <span>{{ dateFormat "2006" now }}</span> {{.copyright}}
             </p>
-            <p>
-              Made with <i class="ph-heart-fill"></i> by
-              {{ range $index, $element := .authors }}
-              {{ if $index }} & {{ end }}
-              <a href="{{ .link }}" style="color: #ffffff;">{{ .name }}</a>
-              {{ end }}
-            </p>
           </div>
           <div class="social-icon">
             <ul class="list-unstyled">
@@ -27,6 +20,15 @@
               </li>
               {{ end }}
             </ul>
+          </div>
+          <div class="footer-logo mt-7 mt-md-0">
+            <p>
+              Made with <i class="ph-heart-fill"></i> by
+              {{ range $index, $element := .authors }}
+              {{ if $index }} & {{ end }}
+              <a href="{{ .link }}" style="color: #ffffff;">{{ .name }}</a>
+              {{ end }}
+            </p>
           </div>
         </div>
         {{ range .sections }}
