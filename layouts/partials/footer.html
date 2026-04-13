@@ -11,6 +11,13 @@
             <p>
               © Copyright <span>{{ dateFormat "2006" now }}</span> {{.copyright}}
             </p>
+            <p>
+              Made with <i class="ph-heart-fill"></i> by
+              {{ range $index, $element := .authors }}
+              {{ if $index }} & {{ end }}
+              <a href="{{ .link }}" style="color: #ffffff;">{{ .name }}</a>
+              {{ end }}
+            </p>
           </div>
           <div class="social-icon">
             <ul class="list-unstyled">

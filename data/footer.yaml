@@ -1,7 +1,12 @@
 ---
 logo: /images/footer-logo.svg
 logo_url: /home
-copyright: "MyCompany. All rights reserved."
+copyright: "Fisionarium. All rights reserved."
+authors:
+  - name: "David"
+    link: "https://dvmcarpena.com/"
+  - name: "Gerard"
+    link: "https://www.linkedin.com/in/gerard-finol-0ba7b4194/"
 social:
   - link: "https://www.facebook.com/mycompany"
     icon: "ph-facebook-logo"
@@ -25,11 +30,11 @@ sections:
         text: "Price"
       - link: "/about"
         text: "About"
-  -
-    title: "Community"
-    links:
-      - link: "/blog"
-        text: "Blog"
+  # -
+  #   title: "Community"
+  #   links:
+  #     - link: "/blog"
+  #       text: "Blog"
   -
     title: "Company"
     links:
