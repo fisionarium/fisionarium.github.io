@@ -1,0 +1,29 @@
+header:
+  Serveis -> landing
+  Conócenos -> landing
+  Contacte -> seccion
+  Clinica -> seccion
+  Idioma -> dropdown
+
+Carrusel con 3 cosas cubriendo toda la pantalla:
+ - servicios 
+ - clinica
+ - contacto
+
+Landing:
+  Servicios
+  Conocenos
+  Reviews
+  Demana cita (cortita) link a whatsapp y/o a form
+
+Contacto:
+  Formulario de contacto
+  Teléfono
+  Email
+  Dirección
+  whatsapp, fb, instagram, linkedin
+
+Clinica: 
+  Descripción de la clínica
+  Carrousel de fotos de la clínica
+  Localización en google maps + dirección
