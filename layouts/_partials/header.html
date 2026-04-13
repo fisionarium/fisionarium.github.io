@@ -1,2 +1,47 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="{{ site.BaseURL }}">
+       <h1>{{ site.Title }}</h1>
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+        {{$menu := (site.Menus.nav)}} 
+        {{$len := (len $menu)}} 
+        {{ range $index, $element := $menu }} 
+          {{ if eq (add $index 1) $len }}
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="{{ .URL | absURL }}"
+            >
+              <span class="btn-area">
+                <span data-text="{{ .Name }}">
+                  {{ .Name }}
+                </span>
+              </span>
+            </a>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .URL | absURL }}"
+              >{{ .Name }}</a
+            >
+          </li>
+          {{ end }} 
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>
