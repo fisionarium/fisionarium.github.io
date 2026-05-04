@@ -1,11 +1,117 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-    esto esta en el html
-    {{ .Params.saludo }}
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-card">
+      <h1>{{ T "contact_title" }}</h1>
+      <p>{{ T "contact_intro" }}</p>
+    </div>
+  </div>
+</section>
 
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-5">
+        <div class="info-card">
+          <h2>{{ T "contact_details_title" }}</h2>
+          <ul class="info-list">
+            <li>
+              <span>{{ site.Params.contact.phone_display }}</span>
+              <a href="tel:{{ site.Params.contact.phone }}"
+                >{{ site.Params.contact.phone_display }}</a
+              >
+            </li>
+            <li>
+              <span>{{ site.Params.contact.email }}</span>
+              <a href="mailto:{{ site.Params.contact.email }}"
+                >{{ site.Params.contact.email }}</a
+              >
+            </li>
+            <li>
+              <span>{{ site.Params.contact.address }}</span>
+              <a
+                href="{{ site.Params.contact.map_link }}"
+                target="_blank"
+                rel="noopener"
+                >{{ site.Params.contact.address }}</a
+              >
+            </li>
+            <li>
+              <span>{{ T "opening_hours" }}</span>
+              <span>{{ site.Params.contact.schedule }}</span>
+            </li>
+          </ul>
+          <div class="contact-social">{{ partial "social-links.html" . }}</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="form-card">
+          <h2>{{ T "contact_form_title" }}</h2>
+          <form
+            class="contact-form"
+            action="mailto:{{ site.Params.contact.email }}"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="name"
+                  >{{ T "contact_name_label" }}</label
+                >
+                <input
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="phone"
+                  >{{ T "contact_phone_label" }}</label
+                >
+                <input
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="email"
+                  >{{ T "contact_email_label" }}</label
+                >
+                <input
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="message"
+                  >{{ T "contact_message_label" }}</label
+                >
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">
+                  {{ T "contact_submit" }}
+                </button>
+                <p class="form-note">{{ T "contact_policy" }}</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {{ end }}

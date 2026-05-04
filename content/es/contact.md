@@ -1,7 +1,5 @@
 ---
-title: Contact
+title: Contacto
 layout: contact
-saludo: "saludo a España"
+description: "Contacta con nuestro equipo para reservar una visita o resolver dudas."
 ---
-
-Este es el contenido de la página de contacto en español.

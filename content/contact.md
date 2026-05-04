@@ -1,7 +1,5 @@
 ---
-title: Contact
+title: Contacte
 layout: contact
-saludo: "saludo al mundo"
+description: "Contacta amb el nostre equip per reservar una visita o resoldre dubtes."
 ---
-
-This is the content of the contact page

@@ -1,36 +1,68 @@
 baseURL = "https://fisionarium.github.io/"
 languageCode = "ca"
 title = "Fisionarium"
+enableRobotsTXT = true
 
 ######################## Menus ###################################
 [[menu.nav]]
-  name   = "Home"
-  url    = ""
+  name = "Serveis"
+  identifier = "services"
+  url = "#services"
   weight = 1
 [[menu.nav]]
-  name   = "About"
-  url    = "about"
+  name = "Coneix-nos"
+  identifier = "get_to_know_us"
+  url = "#about"
   weight = 2
 [[menu.nav]]
-  name   = "Portfolio"
-  url    = "portfolio"
+  name = "Contacte"
+  identifier = "contact"
+  url = "contact"
   weight = 3
 [[menu.nav]]
-  name   = "Blog"
-  url    = "blog"
+  name = "Clinica"
+  identifier = "clinic"
+  url = "clinic"
   weight = 4
-[[menu.nav]]
-  name   = "Get in touch"
-  url    = "contact"
-  weight = 5
 
 
 ######################### Languages ###################################
-defaultContentLanguage = 'ca'
+defaultContentLanguage = "ca"
 [languages]
   [languages.ca]
-      label = 'Català'
+    label = "Català"
     weight = 1
   [languages.es]
-    label = 'Español'
+    label = "Español"
     weight = 2
+
+[params]
+  description = "Fisionarium, centre de fisioterapia a L'Hospitalet de Llobregat. Tractaments personalitzats, fisioterapia esportiva i readaptacio funcional."
+
+  [params.contact]
+    phone = "+34 600 000 000"
+    phone_display = "+34 600 000 000"
+    whatsapp = "https://wa.me/34600000000"
+    email = "hola@fisionarium.cat"
+    address = "L'Hospitalet de Llobregat, Barcelona"
+    schedule = "Dl a Dv, 8:00 a 20:00"
+    map_link = "https://www.google.com/maps?q=L%27Hospitalet%20de%20Llobregat"
+    map_embed = "https://www.google.com/maps?q=L%27Hospitalet%20de%20Llobregat&output=embed"
+
+  [params.social]
+    whatsapp = "https://wa.me/34600000000"
+    facebook = "https://www.facebook.com/"
+    instagram = "https://www.instagram.com/"
+    linkedin = "https://www.linkedin.com/"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[cascade]
+  [cascade._target]
+    kind = "page"
+  description = "Fisionarium, fisioterapia i readaptacio funcional a L'Hospitalet de Llobregat."

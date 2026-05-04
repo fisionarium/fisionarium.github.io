@@ -1,52 +1,67 @@
-<nav class="navbar navbar-expand-lg site-navigation fixed-top">
+{{- $home := .Site.Home -}} {{- $contactPage := site.GetPage "contact" -}} {{-
+$clinicPage := site.GetPage "clinic" -}}
+<nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Primary">
   <div class="container">
-    <a class="navbar-brand" href="{{ site.BaseURL }}">
-      <h1>{{ site.Title }}</h1>
+    <a class="navbar-brand" href="{{ $home.RelPermalink }}">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">{{ site.Title }}</span>
     </a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sitenavbar">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#siteNavbar"
+      aria-controls="siteNavbar"
+      aria-expanded="false"
+      aria-label="{{ T "toggle_navigation" }}"
+    >
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="sitenavbar">
-      <ul class="navbar-nav ml-auto main-nav">
-        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-        {{$menu := (site.Menus.nav)}}
-        {{$len := (len $menu)}}
-        {{ range $index, $element := $menu }}
-        {{ if eq (add $index 1) $len }}
+    <div class="collapse navbar-collapse" id="siteNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        {{ range site.Menus.nav }} {{- $label := .Name -}} {{- with .Identifier
+        -}} {{- with T . -}} {{- $label = . -}} {{- end -}} {{- end -}} {{-
+        $href := .URL -}} {{- if hasPrefix $href "#" -}} {{- $href = printf
+        "%s%s" $home.RelPermalink $href -}} {{- else if not (hasPrefix $href
+        "http") -}} {{- $href = (relLangURL $href) -}} {{- end -}}
         <li class="nav-item">
-          <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="{{ .URL | absURL }}">
-            <span class="btn-area">
-              <span data-text="{{ .Name }}">
-                {{ .Name }}
-              </span>
-            </span>
+          <a class="nav-link" href="{{ $href }}">{{ $label }}</a>
+        </li>
+        {{ end }}
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="languageMenu"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-translate" aria-hidden="true"></i>
+            {{ .Site.Language.LanguageName }}
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="languageMenu"
+          >
+            {{ range .Translations }}
+            <li>
+              <a class="dropdown-item" href="{{ .RelPermalink }}"
+                >{{ .Language.LanguageName }}</a
+              >
+            </li>
+            {{ end }}
+          </ul>
+        </li>
+        <li class="nav-item nav-cta">
+          <a
+            class="btn btn-primary"
+            href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"
+          >
+            {{ T "book_appointment" }}
           </a>
         </li>
-        {{ else }}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-        {{ end }}
-        <nav>
-          <ul>
-            {{ range .Site.Languages }}
-            {{ if eq . $.Site.Language }}
-            <li>{{ .LanguageName }}</span>
-              {{ end }}
-              {{ end }}
-              <ul class="dropdown__menu">
-                {{ range $.Translations }}
-                <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-                </li>
-              </ul>
-              {{ end }}
-            </li>
-          </ul>
-        </nav>
       </ul>
     </div>
   </div>
