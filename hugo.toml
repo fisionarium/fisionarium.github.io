@@ -25,9 +25,11 @@ enableRobotsTXT = true
 defaultContentLanguage = "ca"
 [languages]
   [languages.ca]
+    contentDir = "content"
     label = "Català"
     weight = 1
   [languages.es]
+    contentDir = "content/es"
     label = "Español"
     weight = 2
 

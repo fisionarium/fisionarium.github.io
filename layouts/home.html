@@ -1,5 +1,4 @@
-{{ define "main" }} {{- $home := .Site.Home -}} {{- $contactPage := site.GetPage
-"contact" -}}
+{{ define "main" }} {{- $home := .Site.Home -}}
 
 <section class="hero">
   <div
@@ -51,7 +50,7 @@
               >
               <a
                 class="btn btn-outline-light"
-                href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"
+                href="{{ "contact" | relLangURL }}"
                 >{{ T "hero_cta_secondary" }}</a
               >
             </div>
@@ -92,7 +91,7 @@
             <p>{{ T "carousel_contact_text" }}</p>
             <a
               class="btn btn-outline-light"
-              href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"
+              href="{{ "contact" | relLangURL }}"
               >{{ T "contact" }}</a
             >
           </div>
@@ -347,7 +346,7 @@
         </a>
         <a
           class="btn btn-outline-light"
-          href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"
+          href="{{ "contact" | relLangURL }}"
           >{{ T "appointment_form" }}</a
         >
       </div>
