@@ -37,20 +37,20 @@ defaultContentLanguage = "ca"
   description = "Fisionarium, centre de fisioterapia a L'Hospitalet de Llobregat. Tractaments personalitzats, fisioterapia esportiva i readaptacio funcional."
 
   [params.contact]
-    phone = "+34 600 000 000"
-    phone_display = "+34 600 000 000"
-    whatsapp = "https://wa.me/34600000000"
+    phone = "+34 676 961 822"
+    phone_display = "+34 676 961 822"
+    whatsapp = "https://wa.me/34676961822"
     email = "hola@fisionarium.cat"
-    address = "L'Hospitalet de Llobregat, Barcelona"
+    address = "Carrer Muns, 21, 08902 L'Hospitalet de Llobregat, Barcelona"
     schedule = "Dl a Dv, 8:00 a 20:00"
-    map_link = "https://www.google.com/maps?q=L%27Hospitalet%20de%20Llobregat"
-    map_embed = "https://www.google.com/maps?q=L%27Hospitalet%20de%20Llobregat&output=embed"
+    map_link = "https://www.google.com/maps?q=Carrer%20Muns%2C%2021%2C%2008902%20L%27Hospitalet%20de%20Llobregat%2C%20Barcelona"
+    map_embed = "https://www.google.com/maps?q=Carrer%20Muns%2C%2021%2C%2008902%20L%27Hospitalet%20de%20Llobregat%2C%20Barcelona&output=embed"
 
   [params.social]
-    whatsapp = "https://wa.me/34600000000"
-    facebook = "https://www.facebook.com/"
-    instagram = "https://www.instagram.com/"
-    linkedin = "https://www.linkedin.com/"
+    whatsapp = "https://wa.me/34676961822"
+    # facebook = "https://www.facebook.com/"
+    instagram = "https://www.instagram.com/fisionarium?igsh=MXhjbmgzcTJqankzbQ=="
+    # linkedin = "https://www.linkedin.com/"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
