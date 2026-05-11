@@ -114,4 +114,36 @@
     </div>
   </div>
 </section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5">
+        <div class="info-card">
+          <h2>{{ T "clinic_location_title" }}</h2>
+          <p>{{ site.Params.contact.address }}</p>
+          <p>{{ site.Params.contact.schedule }}</p>
+          <a
+            class="btn btn-primary"
+            href="{{ site.Params.contact.map_link }}"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ T "clinic_open_map" }}
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="map-embed">
+          <iframe
+            src="{{ site.Params.contact.map_embed }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de la clínica"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {{ end }}

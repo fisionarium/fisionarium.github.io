@@ -15,15 +15,10 @@ enableRobotsTXT = true
   url = "#about"
   weight = 2
 [[menu.nav]]
-  name = "Contacte"
-  identifier = "contact"
-  url = "contact"
-  weight = 3
-[[menu.nav]]
   name = "Clinica"
   identifier = "clinic"
-  url = "clinic"
-  weight = 4
+  url = "#clinic"
+  weight = 3
 
 
 ######################### Languages ###################################
