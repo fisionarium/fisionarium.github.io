@@ -1,11 +1,9 @@
-{{- $home := .Site.Home -}} {{- $contactPage := site.GetPage "contact" -}} {{-
-$clinicPage := site.GetPage "clinic" -}}
+{{- $home := .Site.Home -}} {{- $contactPage := site.GetPage "contact" -}}
 <div class="footer">
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-lg-4">
         <div class="footer-brand">
-          <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">{{ site.Title }}</span>
         </div>
         <p class="footer-text">{{ T "footer_blurb" }}</p>
@@ -23,9 +21,7 @@ $clinicPage := site.GetPage "clinic" -}}
             >
           </li>
           <li>
-            <a href="{{ with $clinicPage }}{{ .RelPermalink }}{{ end }}"
-              >{{ T "clinic" }}</a
-            >
+            <a href="{{ $home.RelPermalink }}#clinic">{{ T "clinic" }}</a>
           </li>
           <li>
             <a href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"

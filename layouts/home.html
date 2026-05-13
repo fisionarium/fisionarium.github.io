@@ -48,11 +48,6 @@
                 href="{{ $home.RelPermalink }}#services"
                 >{{ T "hero_cta" }}</a
               >
-              <a
-                class="btn btn-outline-light"
-                href="{{ "contact" | relLangURL }}"
-                >{{ T "hero_cta_secondary" }}</a
-              >
             </div>
           </div>
         </div>
@@ -163,11 +158,6 @@
         </article>
       </div>
     </div>
-    <div class="section-actions">
-      <a class="btn btn-outline-primary" href="{{ $home.RelPermalink }}#clinic"
-        >{{ T "services_link" }}</a
-      >
-    </div>
   </div>
 </section>
 
@@ -178,9 +168,6 @@
         <div class="section-heading">
           <h2>{{ T "about_title" }}</h2>
           <p>{{ T "about_text" }}</p>
-          <a class="btn btn-primary" href="{{ $home.RelPermalink }}#clinic"
-            >{{ T "about_cta" }}</a
-          >
         </div>
       </div>
       <div class="col-12 col-lg-6">
@@ -230,7 +217,7 @@
 
 <section id="clinic" class="section section-muted">
   <div class="container">
-    <div class="row g-4 align-items-center">
+    <div class="row g-4">
       <div class="col-12 col-lg-4">
         <div class="section-heading">
           <h2>{{ T "clinic_title" }}</h2>
@@ -340,12 +327,12 @@
         <p>{{ T "appointment_text" }}</p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="{{ site.Params.contact.whatsapp }}">
+        <a class="btn btn-muted btn-lg" href="{{ site.Params.contact.whatsapp }}">
           <i class="bi bi-whatsapp" aria-hidden="true"></i>
           {{ T "appointment_whatsapp" }}
         </a>
         <a
-          class="btn btn-outline-light"
+          class="btn btn-outline-light btn-lg"
           href="{{ "contact" | relLangURL }}"
           >{{ T "appointment_form" }}</a
         >
@@ -358,7 +345,7 @@
           <p>{{ site.Params.contact.address }}</p>
           <p>{{ site.Params.contact.schedule }}</p>
           <a
-            class="btn btn-primary"
+            class="btn btn-muted"
             href="{{ site.Params.contact.map_link }}"
             target="_blank"
             rel="noopener"

@@ -2,8 +2,9 @@
 <nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Primary">
   <div class="container">
     <a class="navbar-brand" href="{{ $home.RelPermalink }}">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">{{ site.Title }}</span>
+      <span class="brand-mark">
+        <img src="/img/logo.png" alt="Fisionarium" height="28" />
+      </span>
     </a>
     <button
       class="navbar-toggler"
@@ -28,7 +29,15 @@
           <a class="nav-link" href="{{ $href }}">{{ $label }}</a>
         </li>
         {{ end }}
-        <li class="nav-item dropdown">
+        <li class="nav-item nav-cta">
+          <a
+            class="btn btn-primary"
+            href="{{ "contact" | relLangURL }}"
+          >
+            {{ T "book_appointment" }}
+          </a>
+        </li>
+        <li class="nav-item dropdown ms-lg-3">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -38,7 +47,7 @@
             aria-expanded="false"
           >
             <i class="bi bi-translate" aria-hidden="true"></i>
-            {{ .Site.Language.LanguageName }}
+            {{ .Site.Language.Lang | upper }}
           </a>
           <ul
             class="dropdown-menu dropdown-menu-end"
@@ -52,14 +61,6 @@
             </li>
             {{ end }}
           </ul>
-        </li>
-        <li class="nav-item nav-cta">
-          <a
-            class="btn btn-primary"
-            href="{{ "contact" | relLangURL }}"
-          >
-            {{ T "book_appointment" }}
-          </a>
         </li>
       </ul>
     </div>
