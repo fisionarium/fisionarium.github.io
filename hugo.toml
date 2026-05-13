@@ -43,8 +43,8 @@ defaultContentLanguage = "ca"
     email = "hola@fisionarium.cat"
     address = "Carrer Muns, 21, 08902 L'Hospitalet de Llobregat, Barcelona"
     schedule = "Dl a Dv, 8:00 a 20:00"
-    map_link = "https://www.google.com/maps?q=Carrer%20Muns%2C%2021%2C%2008902%20L%27Hospitalet%20de%20Llobregat%2C%20Barcelona"
-    map_embed = "https://www.google.com/maps?q=Carrer%20Muns%2C%2021%2C%2008902%20L%27Hospitalet%20de%20Llobregat%2C%20Barcelona&output=embed"
+    map_link = "https://maps.app.goo.gl/No9ynUx45SU2nS4A6"
+    map_embed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.6002813237664!2d2.125593088386525!3d41.36536899355597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49973fffba779%3A0x53ef7a3b899dbcd4!2sFisionarium!5e0!3m2!1ses!2ses!4v1778668828257!5m2!1ses!2ses"
 
   [params.social]
     whatsapp = "https://wa.me/34676961822"
