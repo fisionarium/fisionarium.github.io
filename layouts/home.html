@@ -1,9 +1,385 @@
-{{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+{{ define "main" }} {{- $home := .Site.Home -}}
+
+<section class="hero">
+  <div
+    id="heroCarousel"
+    class="carousel slide carousel-fade"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="/1.jpg"
+          class="d-block w-100 hero-image"
+          alt="Fisioterapia personalitzada"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="carousel-caption">
+          <div class="hero-panel">
+            <p class="hero-eyebrow">Fisionarium</p>
+            <h1>{{ T "hero_title" }}</h1>
+            <p>{{ T "hero_subtitle" }}</p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="{{ $home.RelPermalink }}#services"
+                >{{ T "hero_cta" }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="/img/facilities/office_1.jpeg"
+          class="d-block w-100 hero-image"
+          alt="Espais de la clínica"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="carousel-caption">
+          <div class="hero-panel">
+            <h2>{{ T "carousel_facilities_title" }}</h2>
+            <p>{{ T "carousel_facilities_text" }}</p>
+            <a
+              class="btn btn-outline-light"
+              href="{{ $home.RelPermalink }}#facilities"
+              >{{ T "facilities" }}</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="/3.jpg"
+          class="d-block w-100 hero-image"
+          alt="Contacte directe"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="carousel-caption">
+          <div class="hero-panel">
+            <h2>{{ T "carousel_contact_title" }}</h2>
+            <p>{{ T "carousel_contact_text" }}</p>
+            <a
+              class="btn btn-outline-light"
+              href="{{ "contact" | relLangURL }}"
+              >{{ T "contact" }}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2>{{ T "services_title" }}</h2>
+      <p>{{ T "services_intro" }}</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="service-card">
+          <h3>{{ T "service_1_title" }}</h3>
+          <p>{{ T "service_1_text" }}</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="service-card">
+          <h3>{{ T "service_2_title" }}</h3>
+          <p>{{ T "service_2_text" }}</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="service-card">
+          <h3>{{ T "service_3_title" }}</h3>
+          <p>{{ T "service_3_text" }}</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="service-card">
+          <h3>{{ T "service_4_title" }}</h3>
+          <p>{{ T "service_4_text" }}</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="service-card">
+          <h3>{{ T "service_5_title" }}</h3>
+          <p>{{ T "service_5_text" }}</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="service-card">
+          <h3>{{ T "service_6_title" }}</h3>
+          <p>{{ T "service_6_text" }}</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section section-muted">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-12 col-lg-6">
+        <div class="section-heading">
+          <h2>{{ T "about_title" }}</h2>
+          <p>{{ T "about_text" }}</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="about-image">
+          <img
+            src="/img/guillem.png"
+            alt="Equip de la clínica"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2>{{ T "reviews_title" }}</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <article class="review-card">
+          <div class="review-stars" aria-hidden="true">★★★★★</div>
+          <p>{{ T "review_1_text" }}</p>
+          <span>{{ T "review_1_name" }}</span>
+        </article>
+      </div>
+      <div class="col-12 col-md-4">
+        <article class="review-card">
+          <div class="review-stars" aria-hidden="true">★★★★★</div>
+          <p>{{ T "review_2_text" }}</p>
+          <span>{{ T "review_2_name" }}</span>
+        </article>
+      </div>
+      <div class="col-12 col-md-4">
+        <article class="review-card">
+          <div class="review-stars" aria-hidden="true">★★★★★</div>
+          <p>{{ T "review_3_text" }}</p>
+          <span>{{ T "review_3_name" }}</span>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="facilities" class="section section-muted">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <div class="section-heading">
+          <h2>{{ T "facilities_title" }}</h2>
+          <p>{{ T "facilities_intro" }}</p>
+          <ul class="info-list">
+            <li>{{ T "facilities_feature_1" }}</li>
+            <li>{{ T "facilities_feature_2" }}</li>
+            <li>{{ T "facilities_feature_3" }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="gallery-card">
+          <h2>{{ T "facilities_gallery_title" }}</h2>
+          <div
+            id="facilitiesCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#facilitiesCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#facilitiesCarousel"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#facilitiesCarousel"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#facilitiesCarousel"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="/img/facilities/office_1.jpeg"
+                  class="d-block w-100 gallery-image"
+                  alt="Gimnàs"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/facilities/gym_1.jpeg"
+                  class="d-block w-100 gallery-image"
+                  alt="Gimnàs"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/facilities/gym_2.jpeg"
+                  class="d-block w-100 gallery-image"
+                  alt="Gimnàs"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/facilities/gym_3.jpeg"
+                  class="d-block w-100 gallery-image"
+                  alt="Gimnàs"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#facilitiesCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#facilitiesCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="appointment" class="section section-cta">
+  <div class="container">
+    <div class="cta-card">
+      <div>
+        <h2>{{ T "appointment_title" }}</h2>
+        <p>{{ T "appointment_text" }}</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-muted btn-lg" href="{{ site.Params.contact.whatsapp }}">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i>
+          {{ T "appointment_whatsapp" }}
+        </a>
+        <a
+          class="btn btn-outline-light btn-lg"
+          href="{{ "contact" | relLangURL }}"
+          >{{ T "appointment_form" }}</a
+        >
+      </div>
+    </div>
+    <div class="row g-4 align-items-center mt-4">
+      <div class="col-12 col-lg-5">
+        <div class="info-card">
+          <h2>{{ T "facilities_location_title" }}</h2>
+          <p>{{ site.Params.contact.address }}</p>
+          <p>{{ site.Params.contact.schedule }}</p>
+          <a
+            class="btn btn-muted"
+            href="{{ site.Params.contact.map_link }}"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ T "facilities_open_map" }}
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="map-embed">
+          <iframe
+            src="{{ site.Params.contact.map_embed }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de la clínica"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {{ end }}

@@ -1,2 +1,68 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+{{- $home := .Site.Home -}}
+<nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Primary">
+  <div class="container">
+    <a class="navbar-brand" href="{{ $home.RelPermalink }}">
+      <span class="brand-mark">
+        <img src="/img/logo.png" alt="Fisionarium" height="40" />
+      </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#siteNavbar"
+      aria-controls="siteNavbar"
+      aria-expanded="false"
+      aria-label="{{ T "toggle_navigation" }}"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="siteNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        {{ range site.Menus.nav }} {{- $label := .Name -}} {{- with .Identifier
+        -}} {{- with T . -}} {{- $label = . -}} {{- end -}} {{- end -}} {{-
+        $href := .URL -}} {{- if hasPrefix $href "#" -}} {{- $href = printf
+        "%s%s" $home.RelPermalink $href -}} {{- else if not (hasPrefix $href
+        "http") -}} {{- $href = (relLangURL $href) -}} {{- end -}}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ $href }}">{{ $label }}</a>
+        </li>
+        {{ end }}
+        <li class="nav-item nav-cta">
+          <a
+            class="btn btn-primary"
+            href="{{ "contact" | relLangURL }}"
+          >
+            {{ T "book_appointment" }}
+          </a>
+        </li>
+        <li class="nav-item dropdown ms-lg-3">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="languageMenu"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-translate" aria-hidden="true"></i>
+            {{ .Site.Language.Lang | upper }}
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="languageMenu"
+          >
+            {{ range .Translations }}
+            <li>
+              <a class="dropdown-item" href="{{ .RelPermalink }}"
+                >{{ .Language.LanguageName }}</a
+              >
+            </li>
+            {{ end }}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

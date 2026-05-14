@@ -1,1 +1,71 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{- $home := .Site.Home -}} {{- $contactPage := site.GetPage "contact" -}}
+<div class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <div class="footer-brand">
+          <span class="brand-text">{{ site.Title }}</span>
+        </div>
+        <p class="footer-text">{{ T "footer_blurb" }}</p>
+        <div class="footer-social">{{ partial "social-links.html" . }}</div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h3 class="footer-title">{{ T "quick_links" }}</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="{{ $home.RelPermalink }}#services">{{ T "services" }}</a>
+          </li>
+          <li>
+            <a href="{{ $home.RelPermalink }}#about"
+              >{{ T "get_to_know_us" }}</a
+            >
+          </li>
+          <li>
+            <a href="{{ $home.RelPermalink }}#facilities">{{ T "facilities" }}</a>
+          </li>
+          <li>
+            <a href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"
+              >{{ T "contact" }}</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="footer-title">{{ T "contact" }}</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="tel:{{ site.Params.contact.phone }}"
+              >{{ site.Params.contact.phone_display }}</a
+            >
+          </li>
+          <li>
+            <a href="mailto:{{ site.Params.contact.email }}"
+              >{{ site.Params.contact.email }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ site.Params.contact.map_link }}"
+              target="_blank"
+              rel="noopener"
+              >{{ site.Params.contact.address }}</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-3">
+        <h3 class="footer-title">{{ T "opening_hours" }}</h3>
+        <p class="footer-text">{{ site.Params.contact.schedule }}</p>
+        <a
+          class="btn btn-outline-light btn-sm"
+          href="{{ with $contactPage }}{{ .RelPermalink }}{{ end }}"
+        >
+          {{ T "contact_us" }}
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright {{ now.Year }}. All rights reserved.</p>
+    </div>
+  </div>
+</div>
