@@ -54,7 +54,7 @@
       </div>
       <div class="carousel-item">
         <img
-          src="/2.jpg"
+          src="/img/facilities/office_1.jpeg"
           class="d-block w-100 hero-image"
           alt="Espais de la clínica"
           loading="lazy"
@@ -62,12 +62,12 @@
         />
         <div class="carousel-caption">
           <div class="hero-panel">
-            <h2>{{ T "carousel_clinic_title" }}</h2>
-            <p>{{ T "carousel_clinic_text" }}</p>
+            <h2>{{ T "carousel_facilities_title" }}</h2>
+            <p>{{ T "carousel_facilities_text" }}</p>
             <a
               class="btn btn-outline-light"
-              href="{{ $home.RelPermalink }}#clinic"
-              >{{ T "clinic" }}</a
+              href="{{ $home.RelPermalink }}#facilities"
+              >{{ T "facilities" }}</a
             >
           </div>
         </div>
@@ -173,7 +173,7 @@
       <div class="col-12 col-lg-6">
         <div class="about-image">
           <img
-            src="/12.jpg"
+            src="/img/guillem.png"
             alt="Equip de la clínica"
             loading="lazy"
             decoding="async"
@@ -215,32 +215,32 @@
   </div>
 </section>
 
-<section id="clinic" class="section section-muted">
+<section id="facilities" class="section section-muted">
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-lg-4">
         <div class="section-heading">
-          <h2>{{ T "clinic_title" }}</h2>
-          <p>{{ T "clinic_intro" }}</p>
+          <h2>{{ T "facilities_title" }}</h2>
+          <p>{{ T "facilities_intro" }}</p>
           <ul class="info-list">
-            <li>{{ T "clinic_feature_1" }}</li>
-            <li>{{ T "clinic_feature_2" }}</li>
-            <li>{{ T "clinic_feature_3" }}</li>
+            <li>{{ T "facilities_feature_1" }}</li>
+            <li>{{ T "facilities_feature_2" }}</li>
+            <li>{{ T "facilities_feature_3" }}</li>
           </ul>
         </div>
       </div>
       <div class="col-12 col-lg-8">
         <div class="gallery-card">
-          <h2>{{ T "clinic_gallery_title" }}</h2>
+          <h2>{{ T "facilities_gallery_title" }}</h2>
           <div
-            id="clinicCarousel"
+            id="facilitiesCarousel"
             class="carousel slide"
             data-bs-ride="carousel"
           >
             <div class="carousel-indicators">
               <button
                 type="button"
-                data-bs-target="#clinicCarousel"
+                data-bs-target="#facilitiesCarousel"
                 data-bs-slide-to="0"
                 class="active"
                 aria-current="true"
@@ -248,41 +248,56 @@
               ></button>
               <button
                 type="button"
-                data-bs-target="#clinicCarousel"
+                data-bs-target="#facilitiesCarousel"
                 data-bs-slide-to="1"
                 aria-label="Slide 2"
               ></button>
               <button
                 type="button"
-                data-bs-target="#clinicCarousel"
+                data-bs-target="#facilitiesCarousel"
                 data-bs-slide-to="2"
                 aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#facilitiesCarousel"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
               ></button>
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="/4.jpg"
+                  src="/img/facilities/office_1.jpeg"
                   class="d-block w-100 gallery-image"
-                  alt="Sala de tractament"
+                  alt="Gimnàs"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="/5.jpg"
+                  src="/img/facilities/gym_1.jpeg"
                   class="d-block w-100 gallery-image"
-                  alt="Zona d'exercici"
+                  alt="Gimnàs"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="/7.jpg"
+                  src="/img/facilities/gym_2.jpeg"
                   class="d-block w-100 gallery-image"
-                  alt="Equipament clínic"
+                  alt="Gimnàs"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/facilities/gym_3.jpeg"
+                  class="d-block w-100 gallery-image"
+                  alt="Gimnàs"
                   loading="lazy"
                   decoding="async"
                 />
@@ -291,7 +306,7 @@
             <button
               class="carousel-control-prev"
               type="button"
-              data-bs-target="#clinicCarousel"
+              data-bs-target="#facilitiesCarousel"
               data-bs-slide="prev"
             >
               <span
@@ -303,7 +318,7 @@
             <button
               class="carousel-control-next"
               type="button"
-              data-bs-target="#clinicCarousel"
+              data-bs-target="#facilitiesCarousel"
               data-bs-slide="next"
             >
               <span
@@ -341,7 +356,7 @@
     <div class="row g-4 align-items-center mt-4">
       <div class="col-12 col-lg-5">
         <div class="info-card">
-          <h2>{{ T "clinic_location_title" }}</h2>
+          <h2>{{ T "facilities_location_title" }}</h2>
           <p>{{ site.Params.contact.address }}</p>
           <p>{{ site.Params.contact.schedule }}</p>
           <a
@@ -350,7 +365,7 @@
             target="_blank"
             rel="noopener"
           >
-            {{ T "clinic_open_map" }}
+            {{ T "facilities_open_map" }}
           </a>
         </div>
       </div>

@@ -1,6 +1,6 @@
 baseURL = "https://fisionarium.github.io/"
 languageCode = "ca"
-title = "Fisionarium - Fisioteràpia Integral i Salut"
+title = "Fisionarium"
 enableRobotsTXT = true
 
 ######################## Menus ###################################
@@ -15,9 +15,9 @@ enableRobotsTXT = true
   url = "#about"
   weight = 2
 [[menu.nav]]
-  name = "Clinica"
-  identifier = "clinic"
-  url = "#clinic"
+  name = "Instal·lacions"
+  identifier = "facilities"
+  url = "#facilities"
   weight = 3
 
 
@@ -34,6 +34,7 @@ defaultContentLanguage = "ca"
     weight = 2
 
 [params]
+  subtitle = "Fisioteràpia Integral i Salut"
   description = "Fisionarium, centre de fisioterapia a L'Hospitalet de Llobregat. Tractaments personalitzats, fisioterapia esportiva i readaptacio funcional."
 
   [params.contact]
@@ -53,13 +54,13 @@ defaultContentLanguage = "ca"
     # linkedin = "https://www.linkedin.com/"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 [taxonomies]
   tag = "tags"
   category = "categories"
 
 [cascade]
-  [cascade._target]
+  [cascade.target]
     kind = "page"
   description = "Fisionarium, fisioterapia i readaptacio funcional a L'Hospitalet de Llobregat."

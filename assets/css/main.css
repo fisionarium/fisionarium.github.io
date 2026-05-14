@@ -82,7 +82,7 @@ a {
 }
 
 .brand-mark img {
-  height: 28px;
+  height: 40px;
   width: auto;
   display: block;
 }
@@ -286,6 +286,34 @@ a {
   border-radius: 2px;
   padding: 2rem;
   border: 1px solid var(--border);
+}
+
+.page-hero-cta {
+  background: var(--muted);
+  color: #fff;
+}
+
+.page-hero-cta h1,
+.page-hero-cta p {
+  color: #fff;
+}
+
+.hero-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.hero-cta-buttons .btn {
+  padding: 0.85rem 2rem;
+  font-size: 1.05rem;
 }
 
 .info-list {
