@@ -407,6 +407,14 @@ a {
   color: #fff;
 }
 
+.footer-credit {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-credit:hover {
+  color: #fff;
+}
+
 .footer-social {
   margin-top: 1rem;
 }
